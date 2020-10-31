@@ -1,14 +1,7 @@
+import { TextNormal } from "./components/atoms/texts";
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code className="">src/App.js</code> and save to reload.
-        </p>
-        <a>Learn React</a>
-      </header>
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
