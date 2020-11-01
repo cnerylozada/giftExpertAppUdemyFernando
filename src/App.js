@@ -3,7 +3,7 @@ import { InputNormal } from "./_commons/atoms/inputs";
 import { ShowGiftsSearched } from "./components";
 
 function App() {
-  const [gift, setGift] = useState("");
+  const [searchList, setSearchList] = useState([]);
 
   return (
     <div className="mt-4">
@@ -12,10 +12,14 @@ function App() {
           <InputNormal
             label="Gift to search"
             placeholder="Enter an name"
-            onChange={setGift}
+            onAddInput={setSearchList}
           />
         </div>
-        <ShowGiftsSearched gift={gift} />
+        {searchList.map((_) => (
+          <div className="mb-4">
+            <ShowGiftsSearched gift={_} />
+          </div>
+        ))}
       </div>
     </div>
   );
