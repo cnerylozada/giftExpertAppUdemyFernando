@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getGiftBySearch } from "../services/gifts";
-import { TextNormal } from "../_commons/atoms/texts";
+import { Card, Loading } from "../_commons/molecules";
 
 const ShowGiftsSearched = ({ gift }) => {
   const [giftSrc, setGiftSrc] = useState("");
@@ -8,12 +8,14 @@ const ShowGiftsSearched = ({ gift }) => {
   useEffect(() => {
     setIsLoading(true);
     getGiftBySearch(gift).then((_) => {
+      console.log(_);
       setGiftSrc(_[0]);
       setIsLoading(false);
     });
   }, [gift]);
-  if (isLoading) return <TextNormal>Loading ...</TextNormal>;
-  return <img src={giftSrc} />;
+  if (isLoading) return <Loading text="Cargando ..." color="blueDark" />;
+
+  return <Card src={giftSrc} title="Mi gift name" />;
 };
 
 export default ShowGiftsSearched;

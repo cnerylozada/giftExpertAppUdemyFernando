@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { InputNormal } from "./_commons/atoms/inputs";
-import { Icons } from "./_commons/atoms/icons";
 import { ShowGiftsSearched } from "./components";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
           />
         </div>
         <ShowGiftsSearched gift={gift} />
-        <Icons name="home" />
       </div>
     </div>
   );
