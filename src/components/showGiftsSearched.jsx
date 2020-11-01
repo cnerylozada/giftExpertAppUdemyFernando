@@ -15,7 +15,7 @@ const ShowGiftsSearched = ({ gift }) => {
   if (isLoading) return <Loading text="Cargando ..." color="blueDark" />;
 
   return (
-    <div className="flex flex-wrap justify-center gap-3">
+    <div className="flex flex-wrap justify-center gap-5">
       {srcList &&
         srcList.map((_) => (
           <div className="w-3/12">
