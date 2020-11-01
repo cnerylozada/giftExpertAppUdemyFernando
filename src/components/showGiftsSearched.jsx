@@ -3,19 +3,27 @@ import { getGiftBySearch } from "../services/gifts";
 import { Card, Loading } from "../_commons/molecules";
 
 const ShowGiftsSearched = ({ gift }) => {
-  const [giftSrc, setGiftSrc] = useState("");
+  const [srcList, setSrcList] = useState();
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
     getGiftBySearch(gift).then((_) => {
-      console.log(_);
-      setGiftSrc(_[0]);
+      setSrcList(_);
       setIsLoading(false);
     });
   }, [gift]);
   if (isLoading) return <Loading text="Cargando ..." color="blueDark" />;
 
-  return <Card src={giftSrc} title="Mi gift name" />;
+  return (
+    <div className="flex flex-wrap justify-center gap-3">
+      {srcList &&
+        srcList.map((_) => (
+          <div className="w-3/12">
+            <Card key={_.url} src={_.url} title={_.title} />
+          </div>
+        ))}
+    </div>
+  );
 };
 
 export default ShowGiftsSearched;
