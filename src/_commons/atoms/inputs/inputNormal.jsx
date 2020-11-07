@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { TextNormal } from "../texts";
 
 const InputNormal = ({ label, onAddInput, ...props }) => {
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      const value = event.target.value;
+  const handleKeyDown = ({ key, target }) => {
+    const value = target.value;
+    if (key === "Enter" && !!value.trim()) {
       onAddInput((_) => [value, ..._]);
     }
   };

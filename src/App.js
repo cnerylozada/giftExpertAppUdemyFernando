@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { InputNormal } from "./_commons/atoms/inputs";
 import { ShowGiftsSearched } from "./components";
+import "./output.css";
 
 function App() {
   const [searchList, setSearchList] = useState([]);
