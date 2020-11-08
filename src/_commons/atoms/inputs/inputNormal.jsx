@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { TextNormal } from "../texts";
 
 const InputNormal = ({ label, onAddInput, ...props }) => {

@@ -19,8 +19,8 @@ const ShowGiftsSearched = ({ gift }) => {
       </div>
       <div className="flex flex-wrap justify-center gap-5">
         {srcList.map((_) => (
-          <div className="w-3/12">
-            <Card key={_.url} src={_.url} title={_.title} />
+          <div className="w-3/12" key={_.id}>
+            <Card src={_.url} title={_.title} />
           </div>
         ))}
       </div>
