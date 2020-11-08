@@ -17,7 +17,7 @@ function App() {
           />
         </div>
         {searchList.map((_) => (
-          <div className="mb-4">
+          <div className="mb-4" key={`${_}`}>
             <ShowGiftsSearched gift={_} />
           </div>
         ))}
